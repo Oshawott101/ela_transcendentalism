@@ -1,0 +1,51 @@
+input {
+  margin: 10px 20px 20px;
+}
+.choices {
+  color: mediumvioletred;
+  font-size: 18px;
+  background-color: palegreen;
+  font-weight: 700;
+}
+#background {
+  background: url("question0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+#A, #B, #C, #D, #BSpan, #CSpan, #DSpan {
+  display: none;
+}
+#hideAfterFirst {
+  color: darkorchid;
+  background-color: lightsteelblue;
+  font-family: "Lucida Handwriting", cursive;
+  font-size: 36px;
+}
+#question {
+  color: deeppink;
+  background-color: peachpuff;
+  font-family: "Garamond", "Lucinda Console", sans-serif;
+  font-size: 21.06px;
+}
+#button {
+  background-color: dodgerblue;
+  border: 1px darkcyan;
+  color: ivory;
+  margin: 5px;
+  font-family: "Papyrus", fantasy;
+  padding: 10px 21px;
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+}
+#button:hover {
+  background-color: indigo;
+  font-family: "Brush Script MT", cursive;
+  color: fuchsia;
+  font-size: 28px;
+  border-radius: 10px;
+}
