@@ -23,11 +23,19 @@ input {
   font-family: "Lucida Handwriting", cursive;
   font-size: 36px;
 }
+
 #question {
   color: deeppink;
   background-color: peachpuff;
   font-family: "Garamond", "Lucinda Console", sans-serif;
   font-size: 21.06px;
+}
+.quotes {
+  display: none;
+  font-size: 18px;
+  color: aquamarine;
+  background-color: hotpink;
+  font-family: "Tahoma", "Lucinda Console", sans-serif;
 }
 #button {
   background-color: dodgerblue;

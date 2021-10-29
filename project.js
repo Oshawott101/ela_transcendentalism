@@ -11,7 +11,14 @@ var question = document.getElementById("question");
 var background = document.getElementById("background");
 var hideAfterFirst = document.getElementById("hideAfterFirst");
 var button = document.getElementById("button");
+var nature = document.getElementById("nature");
+var selfreliance = document.getElementById("selfreliance");
+var inherentgoodness = document.getElementById("inherentgoodness");
+var intuition = document.getElementById("intuition");
+var nonconformity = document.getElementById("nonconformity");
 var questionNumber = 0;
+var isNature = false, isNonConformity = false, isInherentGoodness = false, isSelfReliance = false, isIntuition = false;
+var numQuotes = 0;
 
 function transition() {
   if (optionA.checked || optionB.checked || optionC.checked || optionD.checked || questionNumber === 0 || questionNumber == 6) {
@@ -77,6 +84,8 @@ function transition2() {
   if (optionA.checked) {
     score += 4;
     optionA.checked = false;
+    isNonConformity = true;
+    numQuotes++;
   }
   else if (optionB.checked) {
     score += 1;
@@ -114,6 +123,8 @@ function transition3() {
   else if (optionD.checked) {
     score += 4;
     optionD.checked = false;
+    isInherentGoodness = true;
+    numQuotes++;
   }
 }
 
@@ -135,6 +146,8 @@ function transition4() {
   else if (optionC.checked) {
     score += 4;
     optionC.checked = false;
+    isIntuition = true;
+    numQuotes++;
   }
   else if (optionD.checked) {
     score += 2;
@@ -161,6 +174,8 @@ function transition5() {
   else if (optionC.checked) {
     score += 4;
     optionC.checked = false;
+    isSelfReliance = true;
+    numQuotes++;
   }
   else if (optionD.checked) {
     score += 1;
@@ -178,6 +193,8 @@ function transition6() {
   else if (optionB.checked) {
     score += 4;
     optionB.checked = false;
+    isNature = true;
+    numQuotes++;
   }
   else if (optionC.checked) {
     score += 3;
@@ -200,16 +217,44 @@ function transition6() {
     question.innerHTML = "Amazing! You're just as much of a Transcendentalist as Henry David Thoreau, Ralph Waldo Emerson, and Walt Whitman!";
   }
   wordsA.innerHTML = "You had a score of " + score + ". Want to try again?";
-  wordsB.style.display = "none";
+  if (numQuotes === 0) {
+    wordsB.innerHTML = "Oh no! You didn't discover any quotes!";
+  }
+  else if (numQuotes == 1) {
+    wordsB.innerHTML = "Here is the quote you found!";
+  }
+  else if (numQuotes > 1) {
+    wordsB.innerHTML = "Here are the quotes you found!";
+  }
   wordsC.style.display = "none";
   wordsD.style.display = "none";
   optionA.style.display = "none";
   optionB.style.display = "none";
   optionC.style.display = "none";
   optionD.style.display = "none";
+  if (isNature) {
+    nature.style.display = "block";
+  }
+  if (isNonConformity) {
+    nonconformity.style.display = "block";
+  }
+  if (isIntuition) {
+    intuition.style.display = "block";
+  }
+  if (isSelfReliance) {
+    selfreliance.style.display = "block";
+  }
+  if (isInherentGoodness) {
+    inherentgoodness.style.display = "block";
+  }
 }
 
 function retake() {
+  nature.style.display = "none";
+  nonconformity.style.display = "none";
+  intuition.style.display = "none";
+  selfreliance.style.display = "none";
+  inherentgoodness.style.display = "none";
   background.style.backgroundImage = "url('question0.png')";
   wordsA.innerHTML = "Ready?";
   button.innerHTML = "Start";
